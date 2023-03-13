@@ -21,11 +21,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_swagger',
+    'drf_yasg',
+
     'devices',
     'company',
     'accounts',
     'distribute'
 ]
+
+SWAGGER_SETTINGS = {
+    'VALIDATOR_URL': 'http://localhost:3000',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +66,8 @@ WSGI_APPLICATION = 'corporate_assets.wsgi.application'
 REST_FRAMEWORK = {
      'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' 
 }
 
 # Database
