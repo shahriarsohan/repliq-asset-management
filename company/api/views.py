@@ -5,6 +5,7 @@ from company.models import Company , Employee
 
 from .serializers import CompanySerializers , EmployeeSerializers
 
+# Api for create new company, A user can create only one company
 class CreateCompany(generics.CreateAPIView):
     serializer_class = CompanySerializers
     permission_classes = [permissions.IsAuthenticated,]
@@ -34,6 +35,7 @@ class CreateCompany(generics.CreateAPIView):
         }} , status=status.HTTP_400_BAD_REQUEST)
    
 
+# Api for create new employee and get all employee list
 class AddOrGetEmployees(generics.ListCreateAPIView):
     serializer_class = EmployeeSerializers
     permission_classes = [permissions.IsAuthenticated,]

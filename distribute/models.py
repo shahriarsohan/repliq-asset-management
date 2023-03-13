@@ -8,6 +8,7 @@ CONDITION_WHEN_CHECKOUT = (
     ("bad", "Bad")
 )
 
+# TODO : Add more option
 CONDITION_WHEN_RETURN = (
     ("good", "Good"),
     ("bad", "Bad")
@@ -28,3 +29,6 @@ class DeviceShare(models.Model):
         max_length=10, null=True, choices=CONDITION_WHEN_RETURN)
 
     notes = models.TextField(blank=True, null=True)
+
+    def __str__(self) -> str:
+        return f"{self.device.name} Shared with {self.employee.name}"

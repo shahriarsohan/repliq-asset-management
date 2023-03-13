@@ -4,6 +4,8 @@ from company.models import Company
 from devices.models import Device
 from .serializers import DeviceSerializer
 
+
+# Create new device and et the list of all devices
 class AddOrGetDevices(generics.ListCreateAPIView):
     serializer_class = DeviceSerializer
     permission_classes = [permissions.IsAuthenticated]

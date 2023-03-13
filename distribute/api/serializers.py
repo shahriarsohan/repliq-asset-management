@@ -11,7 +11,7 @@ class CreateDeviceShareSerializers(serializers.ModelSerializer):
         model = DeviceShare
         fields = ('__all__')
 
-    
+# This searializer will provide better readability (Both serializer can be merge into one but will introduce unnecessary complexity)
 class DeviceShareSerializers(serializers.ModelSerializer):
     company = CompanySerializers(many = False)
     employee = EmployeeSerializers(many = False)

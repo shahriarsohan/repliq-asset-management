@@ -10,3 +10,5 @@ class Device(models.Model):
     price = models.IntegerField(default=999)
     purchased_at = models.DateField(blank= True , null=True , editable=True)
 
+    def __str__(self) -> str:
+        return self.company.name
